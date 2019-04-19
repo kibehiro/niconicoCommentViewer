@@ -21,6 +21,5 @@ class Login:
             self.list_box.insert('end', 'ログイン成功')
         else:
             self.list_box.insert('end', 'ログイン失敗')
-            exit()
 
         return self.session

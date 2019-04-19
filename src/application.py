@@ -1,6 +1,6 @@
 import tkinter
 
-from command import Command
+from src.command import Command
 
 
 class Application(tkinter.Frame):

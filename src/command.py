@@ -1,9 +1,9 @@
 import configparser
 import time
 
-from login import Login
-from makecomment import MakeComment
-from displaycomment import DisplayComment
+from src.displaycomment import DisplayComment
+from src.login import Login
+from src.makecomment import MakeComment
 
 
 class Command:
@@ -21,8 +21,7 @@ class Command:
         PASSWORD = config.get('GENERAL', 'PassWord')
 
         if not MAIL_ADDRESS or not PASSWORD:
-            print('config.iniが正しく設定されていません')
-            exit()
+            self.list_box.insert('end', 'config.iniが正しく設定されていません')
 
         login = Login(MAIL_ADDRESS, PASSWORD, self.list_box)
         self.session = login.do_login()
